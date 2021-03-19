@@ -9,8 +9,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@wdio/local-runner": "^7.2.1",
+    "@wdio/mocha-framework": "^7.2.1",
+    "@wdio/spec-reporter": "^7.2.1",
+    "@wdio/sync": "^7.2.1",
+    "chromedriver": "^89.0.0",
     "eslint": "^7.22.0",
-    "eslint-plugin-wdio": "^7.0.0"
+    "eslint-plugin-wdio": "^7.0.0",
+    "wdio-chromedriver-service": "^7.0.0",
+    "wdio-docker-service": "^3.1.0"
   },
   "dependencies": {
     "@wdio/cli": "^7.2.1"
