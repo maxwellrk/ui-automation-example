@@ -23,10 +23,7 @@ class CartPage extends Page {
      * will likely abstract this function into a new super class
      */
     findItemByItemName(itemName) {
-        return $(`a=${itemName}`)
-            .parentElement()
-            .parentElement()
-            .parentElement();
+        return $(`a=${itemName}`);
     }
 
     /**
@@ -35,7 +32,10 @@ class CartPage extends Page {
      */
     removeItemFromCart(itemName) {
         this.findItemByItemName(itemName)
-            .$('.btn_secondary.cart_button')
+            .parentElement()
+            .parentElement()
+            .parentElement()
+            .$('button.btn_secondary.cart_button')
             .click();
     }
 }

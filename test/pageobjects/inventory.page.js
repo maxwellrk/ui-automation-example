@@ -31,10 +31,7 @@ class InventoryPage extends Page {
 
      */
     findItemByItemName(itemName) {
-        return $(`div=${itemName}`)
-            .parentElement()
-            .parentElement()
-            .parentElement();
+        return $(`div=${itemName}`);
     }
 
     /**
@@ -43,6 +40,9 @@ class InventoryPage extends Page {
      */
     addItemToCart(itemName) {
         this.findItemByItemName(itemName)
+            .parentElement()
+            .parentElement()
+            .parentElement()
             .$('.btn_primary.btn_inventory')
             .click();
     }
