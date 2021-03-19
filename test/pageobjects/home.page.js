@@ -7,6 +7,17 @@ class HomePage extends Page {
     /**
      * getter selectors for home page
      */
+    get usernameField() {
+        return $('#user-name');
+    }
+
+    get passwordField() {
+        return $('#password');
+    }
+
+    get loginButton() {
+        return $('#login-button');
+    }
     /**
      * methods for encapsulation
      */
