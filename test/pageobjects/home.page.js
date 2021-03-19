@@ -22,7 +22,7 @@ class HomePage extends Page {
     //Methods
 
     /**
-     * Signs user into account via home page login form
+     * Attempts to sign user into account via home page login form
      * @param {string} username username of account for login attempt
      * @param {string} password password of account for login attempt
      */
