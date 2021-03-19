@@ -18,6 +18,23 @@ describe('Primary Workflow', () => {
             CartPage.findItemByItemName('Test.allTheThings() T-Shirt (Red)')
         ).toExist();
     });
-    it('Checkout Page - Adds correct items in checkout', () => {});
-    it('Checkout Page - Calculates the items total accuratley', () => {});
+
+    it('Checkout Page - Adds correct items in checkout', () => {
+        CartPage.removeItemFromCart('Sauce Labs Backpack');
+        CartPage.continueShoppingButton.click();
+        InventoryPage.addItemToCart('Sauce Labs Fleece Jacket');
+        InventoryPage.shoppingCartLink.click();
+        expect(
+            CartPage.findItemByItemName('Sauce Labs Backpack')
+        ).not.toExist();
+        expect(CartPage.findItemByItemName('Sauce Labs Bike Light')).toExist();
+        expect(
+            CartPage.findItemByItemName('Sauce Labs Fleece Jacket')
+        ).toExist();
+        expect(
+            CartPage.findItemByItemName('Test.allTheThings() T-Shirt (Red)')
+        ).toExist();
+    });
+
+    it('Checkout Page - Calculates the items total accurately', () => {});
 });
