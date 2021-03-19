@@ -4,11 +4,11 @@ const Page = require('./page');
  * Checkout page selectors and methods
  */
 
-class CheckoutPage extends Page {
+class CheckoutStep2Page extends Page {
     /**
      * getter selectors for checkout page
      */
     //Methods
 }
 
-module.exports = new CheckoutPage();
+module.exports = new CheckoutStep2Page();
