@@ -15,6 +15,10 @@ class CheckoutStep1Page extends Page {
         return $('#password');
     }
 
+    get zipCodeField() {
+        return $('#postal-code');
+    }
+
     get continueButton() {
         return $('input[value="CONTINUE"]');
     }
@@ -26,10 +30,12 @@ class CheckoutStep1Page extends Page {
      * and continue to checkout step two page
      * @param {string} firstname first name of user
      * @param {string} lastname last name of user
+     * @param {number} zipCode 5 digit zipcode of
      */
-    continuePurchase(firstName, lastName) {
+    continuePurchase(firstName, lastName, zipCode) {
         this.firstNameField.addValue(firstName);
         this.lastNameField.addValue(lastName);
+        this.zipCodeField.addValue(zipCode);
         this.continueButton.click();
     }
 }
