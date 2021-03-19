@@ -27,9 +27,11 @@ class InventoryPage extends Page {
     /**
      * Finds and returns an element object based on it's child div.inventory_item_name
      * @param {string} itemName Text value of div.inventory_item_name to find
+     * will likely abstract this function into a new super class
+
      */
     findItemByItemName(itemName) {
-        return $(`a=${itemName}`)
+        return $(`div=${itemName}`)
             .parentElement()
             .parentElement()
             .parentElement();
@@ -44,6 +46,7 @@ class InventoryPage extends Page {
             .$('.btn_primary.btn_inventory')
             .click();
     }
+    //recordItemPrice
 }
 
 module.exports = new InventoryPage();
