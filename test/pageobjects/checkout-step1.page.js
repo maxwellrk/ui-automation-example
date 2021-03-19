@@ -12,7 +12,7 @@ class CheckoutStep1Page extends Page {
     }
 
     get lastNameField() {
-        return $('#password');
+        return $('#last-name');
     }
 
     get zipCodeField() {
@@ -28,8 +28,8 @@ class CheckoutStep1Page extends Page {
     /**
      * Attempts to enter first and last name of user,
      * and continue to checkout step two page
-     * @param {string} firstname first name of user
-     * @param {string} lastname last name of user
+     * @param {string} firstName first name of user
+     * @param {string} lastName last name of user
      * @param {number} zipCode 5 digit zipcode of
      */
     continuePurchase(firstName, lastName, zipCode) {
