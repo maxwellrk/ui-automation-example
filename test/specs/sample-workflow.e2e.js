@@ -1,6 +1,7 @@
 const HomePage = require('../pageobjects/home.page');
 const CartPage = require('../pageobjects/cart.page');
-const CheckoutPage = require('../pageobjects/checkout.page');
+const CheckoutStep1Page = require('../pageobjects/checkout-step1.page');
+const CheckoutStep2Page = require('../pageobjects/checkout-step2.page');
 const InventoryPage = require('../pageobjects/inventory.page');
 
 describe('Primary Workflow', () => {
@@ -24,17 +25,27 @@ describe('Primary Workflow', () => {
         CartPage.continueShoppingButton.click();
         InventoryPage.addItemToCart('Sauce Labs Fleece Jacket');
         InventoryPage.shoppingCartLink.click();
+        CartPage.checkoutButton.click();
+        CheckoutStep1Page.continuePurchase('firstname', 'lastname', 01234);
         expect(
-            CartPage.findItemByItemName('Sauce Labs Backpack')
+            CheckoutStep2Page.findItemByItemName('Sauce Labs Backpack')
         ).not.toExist();
-        expect(CartPage.findItemByItemName('Sauce Labs Bike Light')).toExist();
         expect(
-            CartPage.findItemByItemName('Sauce Labs Fleece Jacket')
+            CheckoutStep2Page.findItemByItemName('Sauce Labs Bike Light')
         ).toExist();
         expect(
-            CartPage.findItemByItemName('Test.allTheThings() T-Shirt (Red)')
+            CheckoutStep2Page.findItemByItemName('Sauce Labs Fleece Jacket')
+        ).toExist();
+        expect(
+            CheckoutStep2Page.findItemByItemName(
+                'Test.allTheThings() T-Shirt (Red)'
+            )
         ).toExist();
     });
 
-    it('Checkout Page - Calculates the items total accurately', () => {});
+    it('Checkout Page - Calculates the items total accurately', () => {
+        //assert against item total
+        //assert against complete total
+        //click finish button
+    });
 });
