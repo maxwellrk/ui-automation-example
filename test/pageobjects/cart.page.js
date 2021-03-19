@@ -8,9 +8,13 @@ class CartPage extends Page {
     /**
      * getter selectors for cart page
      */
-    //continue shopping button
+    get continueShoppingButton() {
+        return $('a=Continue Shopping');
+    }
 
-    //checkout button
+    get checkoutButton() {
+        return $('a=CHECKOUT');
+    }
 
     //Methods
     /**
