@@ -18,9 +18,19 @@ class HomePage extends Page {
     get loginButton() {
         return $('#login-button');
     }
+
+    //Methods
+
     /**
-     * methods for encapsulation
+     * Signs user into account via home page login form
+     * @param {string} username username of account for login attempt
+     * @param {string} password password of account for login attempt
      */
+    login(username, password) {
+        this.usernameField.addValue(username);
+        this.passwordField.addValue(password);
+        this.loginButton.click();
+    }
 }
 
 module.exports = new HomePage();
