@@ -20,6 +20,14 @@ class InventoryPage extends Page {
     }
 
     //Methods
+
+    /**
+     * Selects sortby dropdown option by text
+     * @param {string} selectedOption dropdown option to select by visible text
+     */
+    selectSortByDropdownByText(selectedOption) {
+        this.sortByDropdown.selectByVisibleText(selectedOption);
+    }
 }
 
 module.exports = new InventoryPage();
