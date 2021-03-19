@@ -7,5 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-plugin-wdio": "^7.0.0"
+  },
+  "dependencies": {
+    "@wdio/cli": "^7.2.1"
+  }
 }
