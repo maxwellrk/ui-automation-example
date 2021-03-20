@@ -44,8 +44,11 @@ describe('Primary Workflow', () => {
     });
 
     it('Checkout Page - Calculates the items total accurately', () => {
-        //assert against item total
-        //assert against complete total
-        //click finish button
+        //I'm making an assumption here for the assertion that the tax values are correct,
+        //as the item total is correct, and the tax percentage is never specified
+        expect(
+            Number(CheckoutStep2Page.totalPrice.getText().split('$')[1])
+        ).toEqual(82.05);
+        CheckoutStep2Page.finishButton.click();
     });
 });
